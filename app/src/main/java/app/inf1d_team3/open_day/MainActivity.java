@@ -19,4 +19,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, OpenDaysActivity.class);
         startActivity(intent);
     }
+
+    protected void onDestroy(){
+        super.onDestroy();
+
+        LocalDatabase.destroy();
+    }
 }
