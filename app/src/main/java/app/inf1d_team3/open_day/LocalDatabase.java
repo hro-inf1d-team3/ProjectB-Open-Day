@@ -1,6 +1,10 @@
 package app.inf1d_team3.open_day;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 public class LocalDatabase {
 
@@ -25,18 +29,45 @@ public class LocalDatabase {
                 "Media Design & Communication, part of the Master of Arts in Fine Art and Design, is a research orientated master programme with an emphasis on the connection between practice and theory."));
         openDaysList.add(new OpenDay("Technische Informatica",
                 "Als technisch informaticus werk je aan moderne ICT-systemen waarbij hard- en software geïntegreerd zijn. Dankzij je kennis van programmeren en hardware kun je juist op het snijpunt daarvan opereren."));
+
+        for (OpenDay openDay : openDaysList) {
+            Calendar day = Calendar.getInstance();
+
+            day.set(2019,1,15,13,0);
+            openDay.addEvent(new OpenDayEvent("Intro", "Introduction to the open day", day.getTime()));
+
+            day.add(Calendar.HOUR_OF_DAY, +1);
+            openDay.addEvent(new OpenDayEvent("Course information", "A dedicated half hour to explain what is going to happen during the course", day.getTime()));
+
+            day.add(Calendar.HOUR_OF_DAY, 1);
+            day.add(Calendar.MINUTE, 30);
+            openDay.addEvent(new OpenDayEvent("Project presentation", "A couple of students will show what they made", day.getTime()));
+        }
     }
 
     public static void destroy(){
         openDaysList.clear();
     }
 
+    public static class OpenDayEvent {
+        private String name, description;
+        private Date dateTime;
+
+        public OpenDayEvent(String name, String description, Date dateTime){
+            this.name = name;
+            this.description = description;
+            this.dateTime = dateTime;
+        }
+    }
+
     public static class OpenDay {
         private String name, description;
+        private ArrayList<OpenDayEvent> events;
 
         public OpenDay(String name, String description){
             this.name = name;
             this.description = description;
+            this.events = new ArrayList<>();
         }
 
         public String getName(){
@@ -45,6 +76,22 @@ public class LocalDatabase {
 
         public String getDescription(){
             return description;
+        }
+
+        public OpenDayEvent[] addEvent(OpenDayEvent event){
+            this.events.add(event);
+
+            return this.getOpenDayEvents();
+        }
+
+        public OpenDayEvent[] addEvents(OpenDayEvent[] events){
+            this.events.addAll(Arrays.asList(events));
+
+            return this.getOpenDayEvents();
+        }
+
+        public OpenDayEvent[] getOpenDayEvents(){
+            return this.events.toArray(new OpenDayEvent[0]);
         }
     }
 
