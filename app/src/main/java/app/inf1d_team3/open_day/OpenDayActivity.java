@@ -3,9 +3,16 @@ package app.inf1d_team3.open_day;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import app.inf1d_team3.open_day.adapter.OpenDayEventsAdapter;
+
 public class OpenDayActivity extends AppCompatActivity {
+    private RecyclerView eventsView;
+    private RecyclerView.Adapter eventsAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +28,13 @@ public class OpenDayActivity extends AppCompatActivity {
 
         title.setText(openDay.getName());
         description.setText(openDay.getDescription());
+
+        eventsView = findViewById(R.id.recyclerView_open_day_events);
+        layoutManager = new LinearLayoutManager(this);
+        eventsAdapter = new OpenDayEventsAdapter(openDay.getOpenDayEvents());
+
+        eventsView.hasFixedSize();
+        eventsView.setLayoutManager(layoutManager);
+        eventsView.setAdapter(eventsAdapter);
     }
 }
