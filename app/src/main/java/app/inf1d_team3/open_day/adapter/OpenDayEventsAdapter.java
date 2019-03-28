@@ -32,7 +32,7 @@ public class OpenDayEventsAdapter extends RecyclerView.Adapter<OpenDayEventsAdap
 
         holder.title.setText(openDayEvent.getName());
         holder.description.setText(openDayEvent.getDescription());
-        holder.time.setText(openDayEvent.getDateTimeString());
+        holder.time.setText(openDayEvent.getTime());
     }
 
     @Override

@@ -15,7 +15,7 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@tools:sample/lorem" />
+        tools:text="openDayEvent.title" />
 
     <TextView
         android:id="@+id/textView_open_day_event_description"
@@ -29,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_open_day_event_title"
-        tools:text="@tools:sample/lorem" />
+        tools:text="openDayEvent.description" />
 
     <TextView
         android:id="@+id/textView_open_day_event_time"
