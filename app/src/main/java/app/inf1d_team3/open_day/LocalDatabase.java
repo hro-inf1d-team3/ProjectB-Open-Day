@@ -16,9 +16,10 @@ public class LocalDatabase {
     public static ArrayList<OpenDay> openDaysList = new ArrayList<>();
 
     public static void init(){
-        Calendar openDayDate = Calendar.getInstance();
-        openDayDate.clear();
-        openDayDate.set(2020, 1, 15);
+        Calendar openDayCalendar = Calendar.getInstance();
+        openDayCalendar.clear();
+        openDayCalendar.set(2020, 1, 15);
+        Date openDayDate = openDayCalendar.getTime();
 
         openDaysList.add(new OpenDay("Business IT & Management", openDayDate,
                 "Als BIM’er sla je de brug tussen ICT-techniek, organisaties en medewerkers. Bij elke verandering in het bedrijfsproces houd je rekening met deze drie partijen."));
@@ -80,9 +81,9 @@ public class LocalDatabase {
     public static class OpenDay {
         private String name, description;
         private ArrayList<OpenDayEvent> events;
-        private Calendar date;
+        private Date date;
 
-        public OpenDay(String name, Calendar date, String description){
+        public OpenDay(String name, Date date, String description){
             this.name = name;
             this.date = date;
             this.description = description;
@@ -98,12 +99,12 @@ public class LocalDatabase {
         }
 
         public String getDate(){
-            return SimpleDateFormat.getDateInstance(SimpleDateFormat.MEDIUM, Locale.getDefault()).format(this.date.getTime());
+            return SimpleDateFormat.getDateInstance(SimpleDateFormat.MEDIUM, Locale.getDefault()).format(this.date);
         }
 
         public OpenDayEvent[] addEvent(OpenDayEvent event, int hourOfDay, int minute){
             Calendar openDayDateTime = Calendar.getInstance();
-            openDayDateTime.setTime(this.date.getTime());
+            openDayDateTime.setTime(this.date);
             openDayDateTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
             openDayDateTime.set(Calendar.MINUTE, minute);
 
