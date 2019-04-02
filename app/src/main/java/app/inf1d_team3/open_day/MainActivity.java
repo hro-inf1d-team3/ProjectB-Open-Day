@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity2();
+                openInfopage();
             }
         });
 
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //dat is de rest van de boveaan code
-    public void openActivity2(){
+    public void openInfopage(){
         Intent intent = new Intent(MainActivity.this, InstituteInfoActivity.class);
         startActivity(intent);
     }
