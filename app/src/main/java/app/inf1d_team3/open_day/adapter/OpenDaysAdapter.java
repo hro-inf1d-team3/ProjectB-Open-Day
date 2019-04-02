@@ -37,7 +37,8 @@ public class OpenDaysAdapter extends RecyclerView.Adapter<OpenDaysAdapter.OpenDa
 
     @Override
     public void onBindViewHolder(@NonNull OpenDaysViewHolder holder, int position) {
-        holder.textView.setText(dataset[position].getName());
+        holder.item.setText(dataset[position].getName());
+        holder.date.setText(dataset[position].getDate());
     }
 
     @Override
@@ -47,10 +48,12 @@ public class OpenDaysAdapter extends RecyclerView.Adapter<OpenDaysAdapter.OpenDa
 
     public static class OpenDaysViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView textView;
+        public TextView item;
+        public TextView date;
         public OpenDaysViewHolder(@NonNull View view) {
             super(view);
-            this.textView = view.findViewById(R.id.textView_open_days_item);
+            this.item = view.findViewById(R.id.textView_open_days_item);
+            this.date = view.findViewById(R.id.textView_open_days_date);
         }
     }
 }
