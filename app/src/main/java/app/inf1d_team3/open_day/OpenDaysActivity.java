@@ -26,6 +26,9 @@ public class OpenDaysActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        LocalDatabase.init();
+
         setContentView(R.layout.activity_open_days);
         context = this;
 
@@ -39,17 +42,23 @@ public class OpenDaysActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int pos = recyclerView.indexOfChild(v);
-                /*LinearLayout lin = (LinearLayout)v;
-                TextView text = (TextView) lin.getChildAt(0);
-                System.out.println(text.getText());*/
 
-                System.out.println(context.getPackageName());
                 Intent intent = new Intent(context, OpenDayActivity.class);
                 intent.putExtra(EXTRA_OPEN_DAY_INDEX, pos);
                 startActivity(intent);
             }
         });
         recyclerView.setAdapter(openDaysAdapter);
+    }
 
+    public void openInfopage(View view){
+        Intent intent = new Intent(this, InstituteInfoActivity.class);
+        startActivity(intent);
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+
+        LocalDatabase.destroy();
     }
 }
