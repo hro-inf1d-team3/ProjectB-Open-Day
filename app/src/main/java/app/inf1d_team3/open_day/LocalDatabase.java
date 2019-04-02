@@ -1,15 +1,10 @@
 package app.inf1d_team3.open_day;
 
-import android.provider.Settings;
-
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 public class LocalDatabase {
 

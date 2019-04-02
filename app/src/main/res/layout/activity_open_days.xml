@@ -15,19 +15,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_open_days_instute_info"
+        app:layout_constraintTop_toBottomOf="@+id/button_open_days_about_institute"
         tools:listitem="@layout/recycler_view_open_days_item" />
 
     <Button
-        android:id="@+id/button_open_days_instute_info"
+        android:id="@+id/button_open_days_about_institute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/colorAccent"
+        android:elevation="0dp"
         android:onClick="openInfopage"
-        android:text="Institute Information"
+        android:text="@string/button_open_days_about_institute"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

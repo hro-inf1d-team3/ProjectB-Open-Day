@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="app.inf1d_team3.open_day">
 
     <application
@@ -16,10 +17,23 @@
             android:name=".OpenDayActivity"
             android:parentActivityName=".OpenDaysActivity" />
         <activity android:name=".OpenDaysActivity">
+            <tools:validation testUrl="https://www.hogeschoolrotterdam.nl/voorlichting/hulp-bij-studiekeuze/open-dag/programmas-open-dagen/open-dag-bachelors/open-dag-bachelor-voltijdduaal/open-dag-ba-informatica-vt/" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="www.hogeschoolrotterdam.nl"
+                    android:pathPrefix="/voorlichting/hulp-bij-studiekeuze/open-dag/programmas-open-dagen/" />
             </intent-filter>
         </activity>
     </application>
