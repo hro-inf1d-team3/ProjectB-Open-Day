@@ -93,7 +93,11 @@ public class LocalDatabase {
             return description;
         }
 
-        public String getDate(){
+        public Date getDate(){
+            return date;
+        }
+
+        public String getDateAsText(){
             return SimpleDateFormat.getDateInstance(SimpleDateFormat.MEDIUM, Locale.getDefault()).format(this.date);
         }
 
