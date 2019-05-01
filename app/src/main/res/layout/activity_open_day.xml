@@ -42,19 +42,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView_open_day_event"
         tools:listitem="@layout/recycler_view_open_day_event" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_open_day_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Events"
+        android:text="@string/textView_open_day_event"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_open_day_addToCalendar" />
+
+    <Button
+        android:id="@+id/button_open_day_addToCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorAccent"
+        android:onClick="addToCalendar"
+        android:text="@string/button_open_day_addToCalendar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_open_day_desciption" />
 

@@ -30,8 +30,8 @@ public class OpenDayEventsAdapter extends RecyclerView.Adapter<OpenDayEventsAdap
     public void onBindViewHolder(@NonNull OpenDayEventsViewHolder holder, int position) {
         LocalDatabase.OpenDayEvent openDayEvent = dataset[position];
 
-        holder.title.setText(openDayEvent.getName());
-        holder.description.setText(openDayEvent.getDescription());
+        holder.title.setText(openDayEvent.name);
+        holder.description.setText(openDayEvent.description);
         holder.time.setText(openDayEvent.getTime());
     }
 
