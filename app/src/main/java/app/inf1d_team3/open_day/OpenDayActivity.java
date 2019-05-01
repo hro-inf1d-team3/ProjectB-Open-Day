@@ -28,8 +28,8 @@ public class OpenDayActivity extends AppCompatActivity {
         TextView title = findViewById(R.id.textView_open_day_title);
         TextView description = findViewById(R.id.textView_open_day_desciption);
 
-        title.setText(openDay.getName());
-        description.setText(openDay.getDescription());
+        title.setText(openDay.name);
+        description.setText(openDay.description);
 
         RecyclerView eventsView = findViewById(R.id.recyclerView_open_day_events);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -42,17 +42,17 @@ public class OpenDayActivity extends AppCompatActivity {
 
     public void addToCalendar(View view){
         Calendar date = Calendar.getInstance();
-        date.setTime(openDay.getDate());
+        date.setTime(openDay.date);
 
-        String title = getResources().getString(R.string.open_day_calendarTitle) + " " + openDay.getName();
+        String title = getResources().getString(R.string.open_day_calendarTitle) + " " + openDay.name;
 
         Intent intent = new Intent(Intent.ACTION_INSERT)
                 .setData(CalendarContract.Events.CONTENT_URI)
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, date.getTimeInMillis())
                 .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true)
                 .putExtra(CalendarContract.Events.TITLE, title)
-                .putExtra(CalendarContract.Events.DESCRIPTION, openDay.getDescription())
-                //.putExtra(CalendarContract.Events.EVENT_LOCATION, "The gym")
+                .putExtra(CalendarContract.Events.DESCRIPTION, openDay.name)
+                .putExtra(CalendarContract.Events.EVENT_LOCATION, openDay.location)
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_TENTATIVE);
         startActivity(intent);
     }
