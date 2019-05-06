@@ -56,4 +56,16 @@ public class OpenDayActivity extends AppCompatActivity {
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_TENTATIVE);
         startActivity(intent);
     }
+
+    public void share(View view){
+        Intent myIntent = new Intent(Intent.ACTION_SEND);
+        myIntent.setType("text/plain");
+        String shareSub= getResources().getString(R.string.open_day_shareTitle) + " " + openDay.name;
+        String shareBody=  shareSub + "\n\n"
+                + openDay.description + "\n\n"
+                + openDay.location;
+        myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+        myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+        startActivity(Intent.createChooser(myIntent, "share using"));
+    }
 }

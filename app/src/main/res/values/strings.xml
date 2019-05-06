@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ProjectB Open Days</string>
     <string name="open_day_calendarTitle">Open day</string>
+    <string name="open_day_shareTitle">Open day:</string>
+    <string name="open_day_shareMenuName">Share open day via</string>
 
     <string name="button_open_days_aboutInstitute">About Institute</string>
     <string name="textView_institute_info">Hogeschool Rotterdam (afgekort: HR) is een hogeschool in Rotterdam.
@@ -9,5 +11,6 @@
         Toen de hogeschool nog bestond uit scholen op verschillende locaties ook buiten Rotterdam, noemde deze zichzelf: "Hogeschool Rotterdam en Omstreken".
         Later, toen uit financieel en organisatorisch oogpunt alle opleidingen werden verhuisd naar de havenstad, werd de instelling omgedoopt tot "Hogeschool Rotterdam"</string>
     <string name="button_open_day_addToCalendar">Add to calendar</string>
+    <string name="button_open_day_share">Share</string>
     <string name="textView_open_day_event">Event</string>
 </resources>
