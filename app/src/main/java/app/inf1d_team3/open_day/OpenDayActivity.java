@@ -66,6 +66,6 @@ public class OpenDayActivity extends AppCompatActivity {
                 + openDay.location;
         myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
         myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
-        startActivity(Intent.createChooser(myIntent, "share using"));
+        startActivity(Intent.createChooser(myIntent, getResources().getString(R.string.open_day_shareMenuName)));
     }
 }
