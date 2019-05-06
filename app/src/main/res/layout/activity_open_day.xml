@@ -70,4 +70,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_open_day_desciption" />
 
+    <Button
+        android:id="@+id/button_open_day_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorAccent"
+        android:onClick="share"
+        android:text="@string/button_open_day_share"
+        app:layout_constraintStart_toEndOf="@+id/button_open_day_addToCalendar"
+        app:layout_constraintTop_toBottomOf="@+id/textView_open_day_desciption" />
+
 </android.support.constraint.ConstraintLayout>
