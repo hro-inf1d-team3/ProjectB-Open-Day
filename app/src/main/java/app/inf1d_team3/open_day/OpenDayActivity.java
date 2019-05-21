@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.Calendar;
 
@@ -20,21 +22,16 @@ public class OpenDayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_day);
-
         Intent intent = getIntent();
         int index = intent.getIntExtra(OpenDaysActivity.EXTRA_OPEN_DAY_INDEX, 0);
-
         openDay = LocalDatabase.openDaysList.get(index);
         TextView title = findViewById(R.id.textView_open_day_title);
         TextView description = findViewById(R.id.textView_open_day_desciption);
-
         title.setText(openDay.name);
         description.setText(openDay.description);
-
         RecyclerView eventsView = findViewById(R.id.recyclerView_open_day_events);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         RecyclerView.Adapter eventsAdapter = new OpenDayEventsAdapter(openDay.getOpenDayEvents());
-
         eventsView.hasFixedSize();
         eventsView.setLayoutManager(layoutManager);
         eventsView.setAdapter(eventsAdapter);
@@ -43,9 +40,7 @@ public class OpenDayActivity extends AppCompatActivity {
     public void addToCalendar(View view){
         Calendar date = Calendar.getInstance();
         date.setTime(openDay.date);
-
         String title = getResources().getString(R.string.open_day_calendarTitle) + " " + openDay.name;
-
         Intent intent = new Intent(Intent.ACTION_INSERT)
                 .setData(CalendarContract.Events.CONTENT_URI)
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, date.getTimeInMillis())

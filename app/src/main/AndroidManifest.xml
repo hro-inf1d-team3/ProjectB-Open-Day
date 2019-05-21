@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AskQuestionActivity"></activity>
         <activity
             android:name=".InstituteInfoActivity"
             android:parentActivityName=".OpenDaysActivity" />
@@ -31,9 +32,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="https"
                     android:host="www.hogeschoolrotterdam.nl"
-                    android:pathPrefix="/voorlichting/hulp-bij-studiekeuze/open-dag/programmas-open-dagen/" />
+                    android:pathPrefix="/voorlichting/hulp-bij-studiekeuze/open-dag/programmas-open-dagen/"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
     </application>

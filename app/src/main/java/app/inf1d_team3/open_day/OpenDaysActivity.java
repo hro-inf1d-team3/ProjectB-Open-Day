@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 
 import app.inf1d_team3.open_day.adapter.OpenDaysAdapter;
 
@@ -14,6 +15,7 @@ import static app.inf1d_team3.open_day.LocalDatabase.openDaysList;
 
 public class OpenDaysActivity extends AppCompatActivity {
     public static final String EXTRA_OPEN_DAY_INDEX = "app.inf1d_team3.open_day.OPEN_DAY_INDEX";
+    private Button button;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter openDaysAdapter;
@@ -46,6 +48,8 @@ public class OpenDaysActivity extends AppCompatActivity {
             }
         });
         recyclerView.setAdapter(openDaysAdapter);
+
+
     }
 
     public void openInfopage(View view){
@@ -57,5 +61,9 @@ public class OpenDaysActivity extends AppCompatActivity {
         super.onDestroy();
 
         LocalDatabase.destroy();
+    }
+    public void openQuestionActivity(View view){
+        Intent intent = new Intent(OpenDaysActivity.this, AskQuestionActivity.class);
+        startActivity(intent);
     }
 }
