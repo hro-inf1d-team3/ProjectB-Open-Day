@@ -49,14 +49,7 @@ public class OpenDaysActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(openDaysAdapter);
 
-        // the third button(ask question)
-        button = (Button) findViewById(R.id.button3);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openActivity();
-            }
-        });
+
     }
 
     public void openInfopage(View view){
@@ -69,7 +62,7 @@ public class OpenDaysActivity extends AppCompatActivity {
 
         LocalDatabase.destroy();
     }
-    public void openActivity(){
+    public void openQuestionActivity(View view){
         Intent intent = new Intent(OpenDaysActivity.this, AskQuestionActivity.class);
         startActivity(intent);
     }

@@ -24,17 +24,11 @@ public class AskQuestionActivity extends AppCompatActivity {
         mEditTextSubject = findViewById(R.id.edit_text_subject);
         mEditTextMessage = findViewById(R.id.edit_text_message);
 
-        Button buttonSend = findViewById(R.id.button_send);
-        buttonSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendMail();
-            }
-        });
+
     }
 
     // messege
-    private void sendMail() {
+    public void sendMail(View view) {
         String[] recipients = new String[]{" studievoorlichting@hr.nl"};
 
         String subject = mEditTextSubject.getText().toString();
