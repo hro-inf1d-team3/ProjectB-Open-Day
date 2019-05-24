@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorAccent"
-            android:onClick="sendMail"
+            android:onClick="fragmentOnClick"
             android:text="send" />
 
     </LinearLayout>

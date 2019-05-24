@@ -34,7 +34,7 @@ public class AskQuestionFragment extends Fragment implements FragmentOnClickable
         return fragmentView;
     }
 
-    public void sendMail(View view) {
+    private void sendMail(View view) {
         String[] recipients = new String[]{" studievoorlichting@hr.nl"};
 
         String subject = mEditTextSubject.getText().toString();

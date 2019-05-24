@@ -56,7 +56,7 @@ public class OpenDaysFragment extends Fragment implements FragmentOnClickable {
         return fragmentView;
     }
 
-    public void openInfopage(View view){
+    private void openInfopage(View view){
         Intent intent = new Intent(context, InstituteInfoActivity.class);
         startActivity(intent);
     }
