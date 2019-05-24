@@ -29,15 +29,17 @@ public class MainActivity extends AppCompatActivity implements FragmentOnClickab
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_openDays:
-                    if(openDaysFragment == null) openDaysFragment = new OpenDaysFragment();
-                    loadFragment(openDaysFragment, true);
-                    return true;
-                case R.id.navigation_askQuestion:
-                    if(askQuestionFragment == null) askQuestionFragment = new AskQuestionFragment();
-                    loadFragment(askQuestionFragment, true);
-                    return true;
+            if (!item.isChecked()) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_openDays:
+                        if (openDaysFragment == null) openDaysFragment = new OpenDaysFragment();
+                        loadFragment(openDaysFragment, true);
+                        return true;
+                    case R.id.navigation_askQuestion:
+                        if (askQuestionFragment == null) askQuestionFragment = new AskQuestionFragment();
+                        loadFragment(askQuestionFragment, true);
+                        return true;
+                }
             }
             return false;
         }
@@ -111,13 +113,10 @@ public class MainActivity extends AppCompatActivity implements FragmentOnClickab
     private void loadFragment(Fragment fragment, boolean addToBackStack){
         String fragmentTag =  fragment.getClass().getName();
         FragmentManager manager = getSupportFragmentManager();
-        manager.popBackStackImmediate(fragmentTag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
         FragmentTransaction transaction = manager.beginTransaction();
+
         transaction.replace(R.id.frameContainer_main, fragment);
-        if(addToBackStack){
-            transaction.addToBackStack(fragmentTag);
-        }
+        if(addToBackStack) transaction.addToBackStack(fragmentTag);
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         transaction.commit();
 
