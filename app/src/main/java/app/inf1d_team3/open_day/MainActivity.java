@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -81,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements FragmentOnClickab
             //Restore the currentFragment's instance
             Fragment savedFragment = getSupportFragmentManager().getFragment(savedInstanceState, "currentFragment");
             String cT = savedInstanceState.getString("currentTitle");
-            Log.d(this.getClass().getName(), cT);
             setCurrentTitle(cT);
             if(savedFragment != null) loadFragment(savedFragment, false);
         } else {
