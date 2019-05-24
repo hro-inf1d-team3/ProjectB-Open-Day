@@ -13,4 +13,11 @@
     <string name="button_open_day_addToCalendar">Add to calendar</string>
     <string name="button_open_day_share">Share</string>
     <string name="textView_open_day_event">Event</string>
+
+    <!-- Titles -->
+    <string name="title_openDays">Open days</string>
+    <string name="title_askQuestion">Ask Question</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

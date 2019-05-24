@@ -10,33 +10,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AskQuestionActivity"></activity>
         <activity
-            android:name=".InstituteInfoActivity"
-            android:parentActivityName=".OpenDaysActivity" />
-        <activity
-            android:name=".OpenDayActivity"
-            android:parentActivityName=".OpenDaysActivity" />
-        <activity android:name=".OpenDaysActivity">
-            <tools:validation testUrl="https://www.hogeschoolrotterdam.nl/voorlichting/hulp-bij-studiekeuze/open-dag/programmas-open-dagen/open-dag-bachelors/open-dag-bachelor-voltijdduaal/open-dag-ba-informatica-vt/" />
-
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="www.hogeschoolrotterdam.nl"
-                    android:pathPrefix="/voorlichting/hulp-bij-studiekeuze/open-dag/programmas-open-dagen/"
-                    android:scheme="https" />
-            </intent-filter>
         </activity>
+        <activity
+            android:name=".InstituteInfoActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".OpenDayActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

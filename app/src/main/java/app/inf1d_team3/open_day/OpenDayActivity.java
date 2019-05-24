@@ -23,7 +23,7 @@ public class OpenDayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_day);
         Intent intent = getIntent();
-        int index = intent.getIntExtra(OpenDaysActivity.EXTRA_OPEN_DAY_INDEX, 0);
+        int index = intent.getIntExtra(OpenDaysFragment.EXTRA_OPEN_DAY_INDEX, 0);
         openDay = LocalDatabase.openDaysList.get(index);
         TextView title = findViewById(R.id.textView_open_day_title);
         TextView description = findViewById(R.id.textView_open_day_desciption);
@@ -46,7 +46,7 @@ public class OpenDayActivity extends AppCompatActivity {
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, date.getTimeInMillis())
                 .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true)
                 .putExtra(CalendarContract.Events.TITLE, title)
-                .putExtra(CalendarContract.Events.DESCRIPTION, openDay.name)
+                .putExtra(CalendarContract.Events.DESCRIPTION, openDay.description)
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, openDay.location)
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_TENTATIVE);
         startActivity(intent);
