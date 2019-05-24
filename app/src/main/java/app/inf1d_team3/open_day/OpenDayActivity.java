@@ -46,7 +46,7 @@ public class OpenDayActivity extends AppCompatActivity {
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, date.getTimeInMillis())
                 .putExtra(CalendarContract.EXTRA_EVENT_ALL_DAY, true)
                 .putExtra(CalendarContract.Events.TITLE, title)
-                .putExtra(CalendarContract.Events.DESCRIPTION, openDay.name)
+                .putExtra(CalendarContract.Events.DESCRIPTION, openDay.description)
                 .putExtra(CalendarContract.Events.EVENT_LOCATION, openDay.location)
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_TENTATIVE);
         startActivity(intent);
