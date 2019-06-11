@@ -15,8 +15,8 @@ public class InstituteInfoActivity extends AppCompatActivity {
     }
 
     public void open(View view) {
-        Intent browaerIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.hogeschoolrotterdam.nl/opleidingen/?areas=mediait"));
-        startActivity(browaerIntent);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.hogeschoolrotterdam.nl/opleidingen/?areas=mediait"));
+        startActivity(browserIntent);
 
     }
 }
