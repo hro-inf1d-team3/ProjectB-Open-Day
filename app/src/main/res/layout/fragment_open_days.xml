@@ -23,7 +23,7 @@
 
         <Button
             android:id="@+id/button_open_days_aboutInstitute"
-            android:layout_width="260dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -32,8 +32,22 @@
             android:elevation="0dp"
             android:onClick="fragmentOnClick"
             android:text="@string/button_open_days_aboutInstitute"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_open_days_website"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_open_days_website"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/colorAccent"
+            android:onClick="fragmentOnClick"
+            android:text="@string/button_open_days_website"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_open_days_aboutInstitute"
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
