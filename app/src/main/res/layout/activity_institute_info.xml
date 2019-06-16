@@ -26,7 +26,7 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:scaleType="fitStart"
-                android:src="@drawable/hogeschool_rotterdam" />
+                android:src="@drawable/hogeschool" />
 
             <TextView
                 android:id="@+id/textView"
