@@ -4,12 +4,14 @@
     <string name="open_day_shareTitle">Open day:</string>
     <string name="open_day_shareMenuName">Share open day via</string>
 
+    <string name="button_open_days_website">Website</string>
     <string name="button_open_days_aboutInstitute">About Institute</string>
     <string name="textView_institute_info">Hogeschool Rotterdam (afgekort: HR) is een hogeschool in Rotterdam.
         Het onderwijsinstituut is ontstaan door een fusie van verschillende scholen uit de regio, in eerste instantie onder meer de HTS in Dordrecht en Rotterdam en het HLO te Delft.
         Later, in 2003, heeft de Hogeschool voor Economische Studies (de "HES") zich bij deze fusie aangesloten.
-        Toen de hogeschool nog bestond uit scholen op verschillende locaties ook buiten Rotterdam, noemde deze zichzelf: "Hogeschool Rotterdam en Omstreken".
-        Later, toen uit financieel en organisatorisch oogpunt alle opleidingen werden verhuisd naar de havenstad, werd de instelling omgedoopt tot "Hogeschool Rotterdam\n\nLocatie Wijnhaven: deze locatie bestaat uit drie gebouwen op Wijnhaven 61, 99 en 107. Hier zijn de studies van het Instituut voor Communicatie, Media en Informatietechnologie en de studie Leisure management gevestigd.\n\n"</string>
+        \n\nToen de hogeschool nog bestond uit scholen op verschillende locaties ook buiten Rotterdam, noemde deze zichzelf: "Hogeschool Rotterdam en Omstreken".
+        Later, toen uit financieel en organisatorisch oogpunt alle opleidingen werden verhuisd naar de havenstad, werd de instelling omgedoopt tot "Hogeschool Rotterdam
+        \n\nLocatie Wijnhaven: deze locatie bestaat uit drie gebouwen op Wijnhaven 61, 99 en 107. Hier zijn de studies van het Instituut voor Communicatie, Media en Informatietechnologie en de studie Leisure management gevestigd.\n\n"</string>
     <string name="button_open_day_addToCalendar">Add to calendar</string>
     <string name="button_open_day_share">Share</string>
     <string name="textView_open_day_event">Event</string>

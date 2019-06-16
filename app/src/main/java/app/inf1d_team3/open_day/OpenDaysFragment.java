@@ -3,6 +3,7 @@ package app.inf1d_team3.open_day;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -61,8 +62,15 @@ public class OpenDaysFragment extends Fragment implements FragmentOnClickable {
         startActivity(intent);
     }
 
+    private void openWebsite(View view) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.hogeschoolrotterdam.nl/opleidingen/?areas=mediait"));
+        startActivity(browserIntent);
+
+    }
+
     @Override
     public void fragmentOnClick(View v) {
         if (v.getId() == R.id.button_open_days_aboutInstitute) openInfopage(v);
+        else if(v.getId() == R.id.button_open_days_website) openWebsite(v);
     }
 }
